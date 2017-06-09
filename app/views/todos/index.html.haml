@@ -1,0 +1,9 @@
+%main
+  %h1 Todos
+  %table
+
+    - @todos.each do |todo|
+      %tr
+        %td= "\"#{shorten(todo.title)}\""
+        %td= "#{time_ago_in_words(todo.created_at)} ago"
+        %td= "by #{todo.user.username}"
