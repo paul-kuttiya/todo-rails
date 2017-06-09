@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Hi #{@user.username}!"
-      redirect_to user
+      redirect_to user_path(current_user)
     else
       render :new
     end
